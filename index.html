@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R & R Tours & Travels - Your Dream Destinations Await</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'saffron': '#FF9933',
+                        'peacock': '#005C98',
+                        'royal-red': '#DC143C',
+                        'ethnic-green': '#138808',
+                        'gold': '#FFD700'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between py-4">
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-gradient-to-r from-saffron to-royal-red rounded-full flex items-center justify-center">
+                        <i class="fas fa-plane text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-xl sm:text-2xl font-bold text-peacock">R & R Tours</h1>
+                        <p class="text-xs sm:text-sm text-gray-600">& Travels</p>
+                    </div>
+                </div>
+                
+                <nav class="hidden lg:flex space-x-8">
+                    <a href="#home" class="text-peacock hover:text-saffron font-medium transition-colors">Home</a>
+                    <a href="#domestic" class="text-peacock hover:text-saffron font-medium transition-colors">Domestic Tours</a>
+                    <a href="#international" class="text-peacock hover:text-saffron font-medium transition-colors">International</a>
+                    <a href="#booking" class="text-peacock hover:text-saffron font-medium transition-colors">Bookings</a>
+                    <a href="#contact" class="text-peacock hover:text-saffron font-medium transition-colors">Contact</a>
+                </nav>
+                
+                <div class="flex items-center space-x-2 sm:space-x-4">
+                    <button class="bg-saffron text-white px-3 sm:px-4 py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm sm:text-base">
+                        <i class="fas fa-user mr-1 sm:mr-2"></i>Login
+                    </button>
+                    <button class="lg:hidden text-peacock">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-[500px] sm:h-[600px] lg:h-[700px] bg-gradient-to-r from-peacock via-ethnic-green to-royal-red">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-center text-white px-4 sm:px-6">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">Explore India & Beyond</h2>
+                <p class="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8">Your Dream Destinations Await</p>
+                <div class="flex flex-wrap justify-center gap-3 sm:gap-4">
+                    <button class="bg-saffron hover:bg-orange-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold transition-colors text-sm sm:text-base">
+                        <i class="fas fa-plane mr-2"></i>Book Flights
+                    </button>
+                    <button class="bg-royal-red hover:bg-red-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold transition-colors text-sm sm:text-base">
+                        <i class="fas fa-train mr-2"></i>Train Tickets
+                    </button>
+                    <button class="bg-ethnic-green hover:bg-green-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold transition-colors text-sm sm:text-base">
+                        <i class="fas fa-hotel mr-2"></i>Hotels
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Search Bar -->
+    <section class="bg-white shadow-lg -mt-16 sm:-mt-20 relative z-10 mx-4 sm:mx-6 lg:mx-8 rounded-xl">
+        <div class="p-4 sm:p-6">
+            <div class="flex flex-wrap justify-center mb-4 sm:mb-6">
+                <button class="tab-btn active bg-saffron text-white px-3 sm:px-4 py-2 rounded-l-lg text-sm sm:text-base" data-tab="flights">
+                    <i class="fas fa-plane mr-1 sm:mr-2"></i>Flights
+                </button>
+                <button class="tab-btn bg-gray-200 text-gray-700 px-3 sm:px-4 py-2 text-sm sm:text-base" data-tab="trains">
+                    <i class="fas fa-train mr-1 sm:mr-2"></i>Trains
+                </button>
+                <button class="tab-btn bg-gray-200 text-gray-700 px-3 sm:px-4 py-2 text-sm sm:text-base" data-tab="buses">
+                    <i class="fas fa-bus mr-1 sm:mr-2"></i>Buses
+                </button>
+                <button class="tab-btn bg-gray-200 text-gray-700 px-3 sm:px-4 py-2 text-sm sm:text-base" data-tab="hotels">
+                    <i class="fas fa-hotel mr-1 sm:mr-2"></i>Hotels
+                </button>
+                <button class="tab-btn bg-gray-200 text-gray-700 px-3 sm:px-4 py-2 rounded-r-lg text-sm sm:text-base" data-tab="cabs">
+                    <i class="fas fa-car mr-1 sm:mr-2"></i>Cabs
+                </button>
+            </div>
+            
+            <div id="flights" class="tab-content">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">From</label>
+                        <input type="text" placeholder="Delhi" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-saffron focus:border-transparent">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">To</label>
+                        <input type="text" placeholder="Mumbai" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-saffron focus:border-transparent">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Departure</label>
+                        <input type="date" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-saffron focus:border-transparent">
+                    </div>
+                    <div class="flex items-end">
+                        <button class="w-full bg-saffron hover:bg-orange-600 text-white p-3 rounded-lg font-semibold transition-colors">
+                            Search Flights
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Destinations -->
+    <section class="py-12 sm:py-16 px-4 sm:px-6">
+        <div class="container mx-auto">
+            <h3 class="text-2xl sm:text-3xl font-bold text-center text-peacock mb-8 sm:mb-12">Popular Destinations</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?w=400&h=250&fit=crop" alt="Taj Mahal" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-bold text-lg text-peacock mb-2">Agra - Taj Mahal</h4>
+                        <p class="text-gray-600 text-sm mb-3">3 Days / 2 Nights</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-saffron font-bold text-lg">₹8,999</span>
+                            <button class="bg-ethnic-green text-white px-3 sm:px-4 py-2 rounded-lg text-sm hover:bg-green-700 transition-colors">
+                                Book Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=250&fit=crop" alt="Goa Beach" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-bold text-lg text-peacock mb-2">Goa Beaches</h4>
+                        <p class="text-gray-600 text-sm mb-3">4 Days / 3 Nights</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-saffron font-bold text-lg">₹12,999</span>
+                            <button class="bg-ethnic-green text-white px-3 sm:px-4 py-2 rounded-lg text-sm hover:bg-green-700 transition-colors">
+                                Book Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&h=250&fit=crop" alt="Kerala Backwaters" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-bold text-lg text-peacock mb-2">Kerala Backwaters</h4>
+                        <p class="text-gray-600 text-sm mb-3">5 Days / 4 Nights</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-saffron font-bold text-lg">₹15,999</span>
+                            <button class="bg-ethnic-green text-white px-3 sm:px-4 py-2 rounded-lg text-sm hover:bg-green-700 transition-colors">
+                                Book Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=400&h=250&fit=crop" alt="Rajasthan" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-bold text-lg text-peacock mb-2">Rajasthan Royal</h4>
+                        <p class="text-gray-600 text-sm mb-3">6 Days / 5 Nights</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-saffron font-bold text-lg">₹18,999</span>
+                            <button class="bg-ethnic-green text-white px-3 sm:px-4 py-2 rounded-lg text-sm hover:bg-green-700 transition-colors">
+                                Book Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Domestic Tours Section -->
+    <section id="domestic" class="py-12 sm:py-16 bg-gray-100">
+        <div class="container mx-auto px-4 sm:px-6">
+            <h3 class="text-2xl sm:text-3xl font-bold text-center text-peacock mb-8 sm:mb-12">Domestic Tour Packages</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=200&fit=crop" alt="Kashmir" class="w-full h-48 object-cover">
+                    <div class="p-4 sm:p-6">
+                        <h4 class="font-bold text-xl text-peacock mb-2">Kashmir - Paradise on Earth</h4>
+                        <p class="text-gray-600 mb-4">Explore the beautiful valleys, Dal Lake, and snow-capped mountains</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xl sm:text-2xl font-bold text-saffron">₹25,999</span>
+                            <span class="text-sm text-gray-500">7 Days / 6 Nights</span>
+                        </div>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check-circle text-ethnic-green mr-2"></i>
+                                <span>Hotel + Meals + Transport</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check-circle text-ethnic-green mr-2"></i>
+                                <span>Sightseeing + Guide</span>
+                            </div>
+                        </div>
+                        <button class="w-full bg-saffron hover:bg-orange-600 text-white py-3 rounded-lg font-semibold transition-colors">
+                            View Details & Book
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&h=200&fit=crop" alt="Himachal" class="w-full h-48 object-cover">
+                    <div class="p-4 sm:p-6">
+                        <h4 class="font-bold text-xl text-peacock mb-2">Himachal Pradesh</h4>
+                        <p class="text-gray-600 mb-4">Shimla, Manali, and scenic hill stations</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xl sm:text-2xl font-bold text-saffron">₹18,999</span>
+                            <span class="text-sm text-gray-500">5 Days / 4 Nights</span>
+                        </div>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check-circle text-ethnic-green mr-2"></i>
+                                <span>Hotel + Meals + Transport</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check-circle text-ethnic-green mr-2"></i>
+                                <span>Adventure Activities</span>
+                            </div>
+                        </div>
+                        <button class="w-full bg-saffron hover:bg-orange-600 text-white py-3 rounded-lg font-semibold transition-colors">
+                            View Details & Book
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=400&h=200&fit=crop" alt="Uttarakhand" class="w-full h-48 object-cover">
+                    <div class="p-4 sm:p-6">
+                        <h4 class="font-bold text-xl text-peacock mb-2">Uttarakhand - Char Dham</h4>
+                        <p class="text-gray-600 mb-4">Spiritual journey to holy destinations</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xl sm:text-2xl font-bold text-saffron">₹22,999</span>
+                            <span class="text-sm text-gray-500">8 Days / 7 Nights</span>
+                        </div>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check-circle text-ethnic-green mr-2"></i>
+                                <span>All Temples + Accommodation</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check-circle text-ethnic-green mr-2"></i>
+                                <span>Helicopter Services Available</span>
+                            </div>
+                        </div>
+                        <button class="w-full bg-saffron hover:bg-orange-600 text-white py-3 rounded-lg font-semibold transition-colors">
+                            View Details & Book
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=400&h=200&fit=crop" alt="Andaman" class="w-full h-48 object-cover">
+                    <div class="p-4 sm:p-6">
+                        <h4 class="font-bold text-xl text-peacock mb-2">Andaman Islands</h4>
+                        <p class="text-gray-600 mb-4">Pristine beaches and crystal clear waters</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xl sm:text-2xl font-bold text-saffron">₹28,999</span>
+                            <span class="text-sm text-gray-500">6 Days / 5 Nights</span>
+                        </div>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check-circle text-ethnic-green mr-2"></i>
+                                <span>Beach Resort + All Meals</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check-circle text-ethnic-green mr-2"></i>
+                                <span>Water Sports + Island Hopping</span>
+                            </div>
+                        </div>
+                        <button class="w-full bg-saffron hover:bg-orange-600 text-white py-3 rounded-lg font-semibold transition-colors">
+                            View Details & Book
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=400&h=200&fit=crop" alt="North East" class="w-full h-48 object-cover">
+                    <div class="p-4 sm:p-6">
+                        <h4 class="font-bold text-xl text-peacock mb-2">North East India</h4>
+                        <p class="text-gray-600 mb-4">Sikkim, Darjeeling, and hidden gems</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xl sm:text-2xl font-bold text-saffron">₹24,999</span>
+                            <span class="text-sm text-gray-500">7 Days / 6 Nights</span>
+                        </div>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check-circle text-ethnic-green mr-2"></i>
+                                <span>Mountain Views + Tea Gardens</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check-circle text-ethnic-green mr-2"></i>
+                                <span>Cultural Experiences</span>
+                            </div>
+                        </div>
+                        <button class="w-full bg-saffron hover:bg-orange-600 text-white py-3 rounded-lg font-semibold transition-colors">
+                            View Details & Book
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=200&fit=crop" alt="Tamil Nadu" class="w-full h-48 object-cover">
+                    <div class="p-4 sm:p-6">
+                        <h4 class="font-bold text-xl text-peacock mb-2">Tamil Nadu Temples</h4>
+                        <p class="text-gray-600 mb-4">Ancient temples and cultural heritage</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xl sm:text-2xl font-bold text-saffron">₹16,999</span>
+                            <span class="text-sm text-gray-500">5 Days / 4 Nights</span>
+                        </div>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check-circle text-ethnic-green mr-2"></i>
+                                <span>Temple Tours + Guide</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check-circle text-ethnic-green mr-2"></i>
+                                <span>Cultural Shows + Local Cuisine</span>
+                            </div>
+                        </div>
+                        <button class="w-full bg-saffron hover:bg-orange-600 text-white py-3 rounded-lg font-semibold transition-colors">
+                            View Details & Book
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- International Tours Section -->
+    <section id="international" class="py-12 sm:py-16">
+        <div class="container mx-auto px-4 sm:px-6">
+            <h3 class="text-2xl sm:text-3xl font-bold text-center text-peacock mb-8 sm:mb-12">International Tour Packages</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=400&h=250&fit=crop" alt="Dubai" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-bold text-lg text-peacock mb-2">Dubai</h4>
+                        <p class="text-gray-600 text-sm mb-3">5 Days / 4 Nights</p>
+                        <div class="mb-3">
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Visa Included</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-saffron font-bold text-lg">₹45,999</span>
+                            <button class="bg-ethnic-green text-white px-3 py-1 rounded text-sm hover:bg-green-700 transition-colors">
+                                Book
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=250&fit=crop" alt="Thailand" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-bold text-lg text-peacock mb-2">Thailand</h4>
+                        <p class="text-gray-600 text-sm mb-3">6 Days / 5 Nights</p>
+                        <div class="mb-3">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">Visa on Arrival</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-saffron font-bold text-lg">₹38,999</span>
+                            <button class="bg-ethnic-green text-white px-3 py-1 rounded text-sm hover:bg-green-700 transition-colors">
+                                Book
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&h=250&fit=crop" alt="Singapore" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-bold text-lg text-peacock mb-2">Singapore</h4>
+                        <p class="text-gray-600 text-sm mb-3">4 Days / 3 Nights</p>
+                        <div class="mb-3">
+                            <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full">Visa Required</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-saffron font-bold text-lg">₹42,999</span>
+                            <button class="bg-ethnic-green text-white px-3 py-1 rounded text-sm hover:bg-green-700 transition-colors">
+                                Book
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=400&h=250&fit=crop" alt="Maldives" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-bold text-lg text-peacock mb-2">Maldives</h4>
+                        <p class="text-gray-600 text-sm mb-3">5 Days / 4 Nights</p>
+                        <div class="mb-3">
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">No Visa Required</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-saffron font-bold text-lg">₹65,999</span>
+                            <button class="bg-ethnic-green text-white px-3 py-1 rounded text-sm hover:bg-green-700 transition-colors">
+                                Book
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=250&fit=crop" alt="Europe" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-bold text-lg text-peacock mb-2">Europe Tour</h4>
+                        <p class="text-gray-600 text-sm mb-3">10 Days / 9 Nights</p>
+                        <div class="mb-3">
+                            <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full">Schengen Visa</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-saffron font-bold text-lg">₹1,25,999</span>
+                            <button class="bg-ethnic-green text-white px-3 py-1 rounded text-sm hover:bg-green-700 transition-colors">
+                                Book
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <img src="https://images.unsplash.com/photo-1549693578-d683be217e58?w=400&h=250&fit=crop" alt="Malaysia" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-bold text-lg text-peacock mb-2">Malaysia</h4>
+                        <p class="text-gray-600 text-sm mb-3">5 Days / 4 Nights</p>
+                        <div class="mb-3">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">eVisa Available</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-saffron font-bold text-lg">₹35,999</span>
+                            <button class="bg-ethnic-green text-white px-3 py-1 rounded text-sm hover:bg-green-700 transition-colors">
+                                Book
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=250&fit=crop" alt="Bali" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-bold text-lg text-peacock mb-2">Bali, Indonesia</h4>
+                        <p class="text-gray-600 text-sm mb-3">6 Days / 5 Nights</p>
+                        <div class="mb-3">
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Visa on Arrival</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-saffron font-bold text-lg">₹48,999</span>
+                            <button class="bg-ethnic-green text-white px-3 py-1 rounded text-sm hover:bg-green-700 transition-colors">
+                                Book
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <img src="https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=400&h=250&fit=crop" alt="Japan" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-bold text-lg text-peacock mb-2">Japan</h4>
+                        <p class="text-gray-600 text-sm mb-3">7 Days / 6 Nights</p>
+                        <div class="mb-3">
+                            <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full">Visa Required</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-saffron font-bold text-lg">₹95,999</span>
+                            <button class="bg-ethnic-green text-white px-3 py-1 rounded text-sm hover:bg-green-700 transition-colors">
+                                Book
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Services Section -->
+    <section id="booking" class="py-12 sm:py-16 bg-gradient-to-r from-peacock to-ethnic-green">
+        <div class="container mx-auto px-4 sm:px-6">
+            <h3 class="text-2xl sm:text-3xl font-bold text-center text-white mb-8 sm:mb-12">Our Booking Services</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                <div class="bg-white rounded-xl p-4 sm:p-6 text-center hover:shadow-xl transition-shadow">
+                    <div class="w-12 sm:w-16 h-12 sm:h-16 bg-saffron rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-plane text-white text-xl sm:text-2xl"></i>
+                    </div>
+                    <h4 class="font-bold text-lg text-peacock mb-2">Flight Booking</h4>
+                    <p class="text-gray-600 text-sm mb-4">Domestic & International flights at best prices</p>
+                    <button class="bg-saffron hover:bg-orange-600 text-white px-4 py-2 rounded-lg transition-colors text-sm sm:text-base">
+                        Book Now
+                    </button>
+                </div>
+                
+                <div class="bg-white rounded-xl p-4 sm:p-6 text-center hover:shadow-xl transition-shadow">
+                    <div class="w-12 sm:w-16 h-12 sm:h-16 bg-royal-red rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-train text-white text-xl sm:text-2xl"></i>
+                    </div>
+                    <h4 class="font-bold text-lg text-peacock mb-2">Train Booking</h4>
+                    <p class="text-gray-600 text-sm mb-4">IRCTC Tatkal & regular train tickets</p>
+                    <button class="bg-royal-red hover:bg-red-700 text-white px-4 py-2 rounded-lg transition-colors text-sm sm:text-base">
+                        Book Now
+                    </button>
+                </div>
+                
+                <div class="bg-white rounded-xl p-4 sm:p-6 text-center hover:shadow-xl transition-shadow">
+                    <div class="w-12 sm:w-16 h-12 sm:h-16 bg-ethnic-green rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-bus text-white text-xl sm:text-2xl"></i>
+                    </div>
+                    <h4 class="font-bold text-lg text-peacock mb-2">Bus Booking</h4>
+                    <p class="text-gray-600 text-sm mb-4">State transport & private buses</p>
+                    <button class="bg-ethnic-green hover:bg-green-700 text-white px-4 py-2 rounded-lg transition-colors text-sm sm:text-base">
+                        Book Now
+                    </button>
+                </div>
+                
+                <div class="bg-white rounded-xl p-4 sm:p-6 text-center hover:shadow-xl transition-shadow">
+                    <div class="w-12 sm:w-16 h-12 sm:h-16 bg-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-car text-white text-xl sm:text-2xl"></i>
+                    </div>
+                    <h4 class="font-bold text-lg text-peacock mb-2">Cab Services</h4>
+                    <p class="text-gray-600 text-sm mb-4">Local & outstation cab booking</p>
+                    <button class="bg-gold hover:bg-yellow-600 text-white px-4 py-2 rounded-lg transition-colors text-sm sm:text-base">
+                        Book Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pune Cab Services -->
+    <section class="py-12 sm:py-16 bg-gray-100">
+        <div class="container mx-auto px-4 sm:px-6">
+            <h3 class="text-2xl sm:text-3xl font-bold text-center text-peacock mb-8 sm:mb-12">Pune Cab Services</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <div class="bg-white rounded-xl p-4 sm:p-6 shadow-lg">
+                    <h4 class="font-bold text-xl text-peacock mb-4">Pune to Popular Destinations</h4>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                            <span class="font-medium">Pune to Mahabaleshwar</span>
+                            <span class="text-saffron font-bold">₹3,500</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                            <span class="font-medium">Pune to Lonavala</span>
+                            <span class="text-saffron font-bold">₹2,200</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                            <span class="font-medium">Pune to Shirdi</span>
+                            <span class="text-saffron font-bold">₹4,800</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                            <span class="font-medium">Pune to Mumbai</span>
+                            <span class="text-saffron font-bold">₹5,500</span>
+                        </div>
+                    </div>
+                    <button class="w-full mt-4 bg-saffron hover:bg-orange-600 text-white py-3 rounded-lg font-semibold transition-colors">
+                        Book Outstation Cab
+                    </button>
+                </div>
+                
+                <div class="bg-white rounded-xl p-4 sm:p-6 shadow-lg">
+                    <h4 class="font-bold text-xl text-peacock mb-4">Airport & Railway Services</h4>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                            <span class="font-medium">Airport Pickup/Drop</span>
+                            <span class="text-saffron font-bold">₹800</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                            <span class="font-medium">Railway Station Transfer</span>
+                            <span class="text-saffron font-bold">₹600</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                            <span class="font-medium">Local Sightseeing (8 hrs)</span>
+                            <span class="text-saffron font-bold">₹2,500</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                            <span class="font-medium">Hourly Rental (per hr)</span>
+                            <span class="text-saffron font-bold">₹300</span>
+                        </div>
+                    </div>
+                    <button class="w-full mt-4 bg-ethnic-green hover:bg-green-700 text-white py-3 rounded-lg font-semibold transition-colors">
+                        Book Local Cab
+                    </button>
+                </div>
+                
+                <div class="bg-white rounded-xl p-4 sm:p-6 shadow-lg">
+                    <h4 class="font-bold text-xl text-peacock mb-4">Vehicle Types</h4>
+                    <div class="space-y-3">
+                        <div class="p-3 bg-gray-50 rounded-lg">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-medium">Sedan (4 Seater)</span>
+                                <i class="fas fa-car text-peacock"></i>
+                            </div>
+                            <p class="text-sm text-gray-600">Swift Dzire, Etios, Amaze</p>
+                        </div>
+                        <div class="p-3 bg-gray-50 rounded-lg">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-medium">SUV (6-7 Seater)</span>
+                                <i class="fas fa-car-side text-peacock"></i>
+                            </div>
+                            <p class="text-sm text-gray-600">Innova, Ertiga, XUV500</p>
