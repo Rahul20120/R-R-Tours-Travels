@@ -1,0 +1,420 @@
+/* =========================================
+   RESPONSIVE.CSS
+   PART 6
+========================================= */
+
+/* ===============================
+   1200px
+================================ */
+
+@media (max-width:1200px){
+
+.container{
+
+    width:95%;
+
+}
+
+.hero h1{
+
+    font-size:3.4rem;
+
+}
+
+.form-grid{
+
+    grid-template-columns:repeat(3,1fr);
+
+}
+
+.footer-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.partner-logos{
+
+    grid-template-columns:repeat(3,1fr);
+
+}
+
+.hero-stats{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.counter-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+/* ===============================
+   992px
+================================ */
+
+@media (max-width:992px){
+
+h1{
+
+    font-size:2.8rem;
+
+}
+
+h2{
+
+    font-size:2.2rem;
+
+}
+
+.navbar{
+
+    display:none;
+
+}
+
+.menu-btn{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+.hero{
+
+    text-align:center;
+
+}
+
+.hero-content{
+
+    max-width:100%;
+
+}
+
+.hero-actions{
+
+    justify-content:center;
+
+}
+
+.booking-tabs{
+
+    justify-content:center;
+
+}
+
+.form-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.newsletter-box{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+.newsletter-form{
+
+    width:100%;
+
+    justify-content:center;
+
+}
+
+.newsletter-form input{
+
+    width:100%;
+
+    max-width:450px;
+
+}
+
+}
+
+/* ===============================
+   768px
+================================ */
+
+@media (max-width:768px){
+
+section{
+
+    padding:70px 0;
+
+}
+
+.header{
+
+    padding:15px 0;
+
+}
+
+.logo img{
+
+    height:50px;
+
+}
+
+.hero{
+
+    min-height:auto;
+
+    padding:140px 0 80px;
+
+}
+
+.hero h1{
+
+    font-size:2.3rem;
+
+}
+
+.hero p{
+
+    font-size:1rem;
+
+}
+
+.hero-actions{
+
+    flex-direction:column;
+
+}
+
+.hero-actions a{
+
+    width:100%;
+
+}
+
+.booking-card{
+
+    padding:22px;
+
+}
+
+.booking-tabs{
+
+    flex-direction:column;
+
+}
+
+.booking-tabs .tab{
+
+    width:100%;
+
+}
+
+.form-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.search-btn{
+
+    width:100%;
+
+}
+
+.destination-grid,
+
+.offer-grid,
+
+.why-grid,
+
+.testimonial-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.hero-stats,
+
+.counter-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.partner-logos{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.footer-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.social-icons{
+
+    justify-content:center;
+
+}
+
+}
+
+/* ===============================
+   576px
+================================ */
+
+@media (max-width:576px){
+
+body{
+
+    font-size:15px;
+
+}
+
+.container{
+
+    width:94%;
+
+}
+
+.hero-badge{
+
+    font-size:.82rem;
+
+}
+
+h1{
+
+    font-size:2rem;
+
+}
+
+h2{
+
+    font-size:1.7rem;
+
+}
+
+.section-title{
+
+    margin-bottom:40px;
+
+}
+
+.booking-card{
+
+    border-radius:18px;
+
+}
+
+.input-group input,
+
+.input-group select{
+
+    height:52px;
+
+}
+
+.newsletter-box{
+
+    padding:30px 20px;
+
+}
+
+.newsletter-form{
+
+    flex-direction:column;
+
+}
+
+.newsletter-form input,
+
+.newsletter-form button{
+
+    width:100%;
+
+}
+
+.back-to-top,
+
+.whatsapp-float{
+
+    width:48px;
+
+    height:48px;
+
+    right:18px;
+
+}
+
+.back-to-top{
+
+    bottom:82px;
+
+}
+
+.whatsapp-float{
+
+    bottom:18px;
+
+}
+
+}
+
+/* ===============================
+   400px
+================================ */
+
+@media (max-width:400px){
+
+.hero h1{
+
+    font-size:1.75rem;
+
+}
+
+.hero p{
+
+    font-size:.95rem;
+
+}
+
+.book-btn{
+
+    display:none;
+
+}
+
+.hero-badge{
+
+    padding:8px 15px;
+
+}
+
+.logo img{
+
+    height:44px;
+
+}
+
+.loader-logo{
+
+    width:80px;
+
+    height:80px;
+
+    font-size:22px;
+
+}
+
+}
